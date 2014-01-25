@@ -1,1 +1,1 @@
-Wes is a homo.
+Django clothes measurement app.
