@@ -11,22 +11,39 @@ class Shirt(models.Model):
 
     class Meta:
         abstract = True
-    
+
 class MaleShirt(Shirt):
     pass
 
 class FemaleShirt(Shirt):
     bust = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
 
-class MalePants(models.Model):
+class Pants(models.Model):
     waist_circumference = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     butt_circumference = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     leg_circumference_upper = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     leg_length_outer = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     leg_length_inner = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
+    
+    class Meta:
+        abstract = True
 
-class MaleShoes(models.Model):
+class MalePants(Pants):
+    pass
+
+class FemalePants(Pants):
+    pass
+
+    
+class Shoes(models.Model):
     foot_size_length = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     foot_size_width = models.DecimalField(default=0.0,max_digits=5,decimal_places=2)
     
- 
+    class Meta:
+        abstract = True
+
+class MaleShoes(Shoes):
+    pass
+
+class FemaleShoes(Shoes):
+    pass
