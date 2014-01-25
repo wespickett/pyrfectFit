@@ -1,1 +1,0 @@
-Wes is a homo.
